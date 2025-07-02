@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+  <h1>Bieu mau khao sat ITViec</h1>
+
+  <div class="container">
+    <form>
+      <div class="form-schedule">
+        <label for="fullName" class="title">FullName</label>
+        <input type="text" placeholder="Enter your fullName" name="fullName" class="infor">
+      </div>
+
+      <div class="form-schedule">
+        <label for="email" class="title">Email</label>
+        <input type="email" placeholder="Enter your email" name="email" class="infor">
+      </div>
+
+      <div class="form-schedule">
+        <label for="age" class="title">Age</label>
+        <input type="number" placeholder="Enter your age" name="age" class="infor">
+      </div>
+
+      <div class="form-schedule">
+        <label for="job" class="title">your job</label>
+        <select class="option" id="job" name="job">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+          <option value="employees">Employees</option>
+        </select>
+      </div>
+
+      <div class="form-schedule">
+        <label for="share" class="title">Will you shares ITViec with your friend?</label>
+        <input type="radio" name="shareOption" id="yes">
+        <label for="yes">Yes</label>
+        <br>
+        <input type="radio" name="shareOption" id="no">
+        <label for="no">No</label>
+        <br>
+        <input type="radio" name="shareOption" id="maybe">
+        <label for="maybe">Maybe</label>
+      </div>
+
+      <div class="form-schedule">
+        <label for="share" class="title">Which programming language you know?</label>
+        <input type="checkbox" name="c" id="c">
+        <label for="C">C</label>
+        <br>
+        <input type="checkbox" name="c++" id="c++">
+        <label for="c++">C++</label>
+        <br>
+        <input type="checkbox" name="c#" id="c#">
+        <label for="c#">C#</label>
+      </div>
+
+      <div class="form-schedule">
+        <label for="questions" class="title">Have you got any questions for ITViecs?</label>
+        <textarea name="questions" id="questions" placeholder="Write your questions...."></textarea>
+      </div>
+
+      <button>Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>
