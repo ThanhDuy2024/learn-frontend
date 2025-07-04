@@ -1,0 +1,52 @@
+* {
+  box-sizing: border-box;
+}
+
+h1::before {
+  font-family: "Font Awesome 6 Free"; /* Hoặc "Font Awesome 6 Solid" tuỳ icon */
+  font-weight: 900; /* Một số icon yêu cầu font-weight: 900 (solid) */
+  content: "\f015"; /* Mã Unicode của icon */
+  margin-right: 0.5em; /* Khoảng cách giữa icon và chữ */
+}
+
+h1:hover {
+  color: blue;
+  cursor: pointer;
+}
+
+.box-1 {
+  border: 5px solid #000;
+  border-radius: 8px;
+  padding: 100px 20px 50px 50px;
+  margin: 0px 80px 80px 0px;
+  width: 500px;
+  height: 100px;
+  overflow: scroll;
+}
+
+.wrap {
+  display: flex;
+}
+
+.button {
+  display: inline-block;
+  padding: 16px 30px;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #ffffff;
+  border: 2px solid rgb(186, 185, 185);
+  margin-right: 5px;
+}
+
+.button:hover {
+  background-color: rgb(78, 78, 235);
+  color: white;
+}
+
+.radius {
+  border-radius: 5px;
+}
+
+.radius-50 {
+  border-radius: 25px;
+}
