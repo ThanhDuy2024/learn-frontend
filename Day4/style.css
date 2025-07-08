@@ -1,0 +1,28 @@
+:root {
+  --color-primary: aqua
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  width: 1000px;
+  height: 500px;
+  border: 1px solid black;
+  position: absolute;
+  left: 120px;
+  top: 100px;
+}
+
+.box-item {
+  padding: 20px;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border: 1px solid black;
+  text-align: center;
+  background-color: var(--color-primary);
+  position: relative;
+  left: 100px;
+}
