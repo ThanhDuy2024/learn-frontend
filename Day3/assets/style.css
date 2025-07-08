@@ -50,3 +50,40 @@ h1:hover {
 .radius-50 {
   border-radius: 25px;
 }
+
+.button-2 {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 1px 6px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 24px;
+  text-align: center;
+}
+
+.icon-color {
+  color: #ffffff;
+  background-color: #2F57EF;
+  border: none;
+}
+
+.button-sec {
+  background-color: #ffffff;
+  border: 1px solid rgb(210, 209, 209);
+}
+
+.button-sec:hover {
+  background-color: #2F57EF;
+  color: white;
+}
+
+.button-phone {
+  background-color: #9dcb04;
+  border: none;
+  color: #ffffff;
+}
+
+.button-phone:hover {
+  background-color: #607D00;
+}
