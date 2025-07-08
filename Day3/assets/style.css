@@ -87,3 +87,21 @@ h1:hover {
 .button-phone:hover {
   background-color: #607D00;
 }
+
+.button-3 {
+  padding: 1px 6px;
+  margin-right: 5px;
+  font-size: 18px;
+  display: inline-block;
+  color: #6b7385;
+  background: #f6f6f6;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.button-3:hover {
+  background-color: #2F57EF;
+  color: white;
+}
