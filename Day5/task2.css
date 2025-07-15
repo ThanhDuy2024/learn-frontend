@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.section-01 {
+  margin-top: 100px;
+}
+
+.container {
+  width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-01 .main-title {
+  font-size: 48px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.section-01 .inner-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.section-01 .inner-wrap .box {
+  width: 280px;
+  height: auto;
+  margin-right: 20px;
+  padding: 15px;
+  display: inline-block;
+  background-color: #ffffff;
+}
+
+.section-01 .inner-wrap .box img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.section-01 .inner-wrap .box .image-sub {
+  width: 70px;
+  height: 70px;
+  padding: 15px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -35px;
+  border: 1px solid rgb(4, 4, 210);
+  border-radius: 100%;
+  font-size: 16px;
+  z-index: 999;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.section-01 .inner-wrap .box .title {
+  text-align: center;
+}
+
+.section-01 .inner-wrap .box .title .sub-title {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 700;
+
+}
+
+.section-01 .inner-wrap .box .title .sub-title a {
+  color: black;
+}
+
+.section-01 .inner-wrap .box .title .sub-title a:hover {
+  color: blue;
+}
+
+.section-01 .inner-wrap .box .title .course{
+  margin-top: 15px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.section-01 .inner-wrap .box .title .course a {
+  color: black;
+}
