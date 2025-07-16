@@ -1,0 +1,74 @@
+* {
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.section {
+  margin-top: 100px;
+  padding: 100px;
+}
+
+.container {
+  width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-title {
+  font-size: 48px;
+  font-weight: 700px;
+  text-align: center;
+}
+
+.inner-wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.inner-wrap .box {
+  margin-right: 20px;
+  width: 280px;
+  height: auto;
+  display: flex;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #ffffff;
+  align-items: center;
+  overflow: hidden;
+}
+
+.inner-wrap .box .image {
+  width: 80px;
+  height: 80px;
+}
+
+.inner-wrap .box .image img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.inner-wrap .box .inner-title {
+  padding-left: 10px;
+}
+
+.inner-wrap .box .inner-title .title a{
+  font-weight: 700;
+  color: black;
+}
+
+.inner-wrap .box .inner-title .title a:hover {
+  color: blue;
+}
+
+.inner-wrap .box .inner-title .sub-title a {
+  color: black;
+  font-size: 13px;
+}
+
+.inner-wrap .box .inner-title .sub-title a:hover {
+  color: blue;
+}
