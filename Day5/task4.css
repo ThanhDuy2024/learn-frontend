@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: "Be Vietnam Pro", sans-serif;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section {
+  margin-top: 100px;
+  padding: 100px 50px;
+  background-color: #EFF1FF;
+  border-radius: 10px;
+}
+
+.inner-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.inner-wrap .title {
+  width: 50%;
+  height: auto;
+}
+
+.inner-wrap .title .title-1 {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  background-color: #E8DFFC;
+  color: #B966EB;
+  font-weight: 500;
+  border-radius: 20px;
+}
+
+.inner-wrap .title .title-2 {
+  color: #192335;
+  font-size: 38px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.inner-wrap .title .title-3 {
+  color: #6B73A5;
+}
+
+.inner-wrap .content {
+  width: 50%;
+  height: auto;
+}
+
+.inner-wrap .content .form {
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.inner-wrap .content .form input {
+  height: 50px;
+  padding: 0px 10px;
+  outline: none;
+  border: none;
+  flex: 1;
+}
+
+.inner-wrap .content .form button {
+  background-color: #B966EB;
+  padding: 0px 20px;
+  height: 50px;
+  font-size: 14px;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.inner-wrap .content .form button:hover {
+  background-color: #A04ECD;
+}
