@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+
+.container {
+  width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+};
+
+.container .inner__wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container .list__item {
+  display: flex;
+  align-items: center;
+}
+
+.list__item .item {
+  background-color: #FDFDFD;
+  width: calc((100% / 4) - (60px / 3));
+  height: auto;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 20px;
+  border: 1px solid black;
+  border-radius: 12px;
+  margin-right: 20px;
+}
+
+.list__item .item:nth-child(4) {
+  margin-right: 0;
+};
+
+.list__item .item:nth-child(8) {
+  margin-right: 0;
+};
+
+.list__item .item .images {
+  width: 100%;
+  height: auto;
+}
+
+.list__item .item .images img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.list__item .item .content {
+  margin-top: 16px;
+}
+
+.list__item .item .content .title {
+  color: #00171F;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.list__item .item .content .infor {
+  display: flex;
+  align-items: center;
+}
+
+.list__item .item .content .infor .sub-infor {
+  margin-right: 26px;
+  font-size: 12px;
+  color: #667479;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.list__item .item .content .infor .sub-infor p {
+  display: inline;
+  font-weight: 700;
+}
+
+.list__item .item .content .price {
+  color: #00171F;
+  font-size: 14px;
+  font-weight: 700;
+}
