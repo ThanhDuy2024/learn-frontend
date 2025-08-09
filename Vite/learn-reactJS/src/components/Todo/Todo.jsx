@@ -28,12 +28,23 @@ export const Todo = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     setTodoList([
-      ...data,
+      ...todoList,
       {
         id: Date.now(),
         title: event.target.keyword.value,
         status: "init"
       }
+    ])
+
+    event.target.keyword.value = "";
+
+    console.log(todoList);
+  }
+
+  const handleDelete = (id) => {
+    const tmpData = todoList.filter(item => item.id !== id);
+    setTodoList([
+      ...tmpData
     ])
   }
   return (
@@ -57,7 +68,7 @@ export const Todo = () => {
               >
                 {item.title}
                 <span className="">
-                  <button>Xoa</button>
+                  <button onClick={() => handleDelete(item.id)}>Xoa</button>
                 </span>
               </li>
             </>
