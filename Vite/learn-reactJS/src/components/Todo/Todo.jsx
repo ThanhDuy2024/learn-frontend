@@ -1,3 +1,4 @@
+import { useState } from "react"
 export const Todo = () => {
   const data = [
     {
@@ -21,16 +22,30 @@ export const Todo = () => {
       status: "deleted"
     }
   ]
+
+  const [todoList, setTodoList] = useState(data);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setTodoList([
+      ...data,
+      {
+        id: Date.now(),
+        title: event.target.keyword.value,
+        status: "init"
+      }
+    ])
+  }
   return (
     <div className="w-[900px] mx-auto mt-[100px] border border-black-600 p-4">
-      <form action="" className="text-center">
-        <input type="text" className="mr-[10px] border border-amber-950 outline-0 p-[5px]" placeholder="Enter your todo...." />
+      <form action="" className="text-center" onSubmit={handleSubmit}>
+        <input type="text" className="mr-[10px] border border-amber-950 outline-0 p-[5px]" placeholder="Enter your todo...." name="keyword"/>
         <button className="bg-blue-500 text-white p-[5px] cursor-pointer">Add todo</button>
       </form>
 
       <div className="w-[300px] mx-auto mt-[10px]">
         <ul>
-          {data.map((item) =>
+          {todoList.map((item) =>
             <>
               <li className={
                 `mb-[5px] 
