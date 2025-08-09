@@ -1,0 +1,54 @@
+export const Todo = () => {
+  const data = [
+    {
+      id: 1,
+      title: "Cong viec 1",
+      status: "init"
+    },
+    {
+      id: 2,
+      title: "Cong viec 2",
+      status: "doing"
+    },
+    {
+      id: 3,
+      title: "Cong viec 3",
+      status: "completed"
+    },
+    {
+      id: 4,
+      title: "Cong viec 4",
+      status: "deleted"
+    }
+  ]
+  return (
+    <div className="w-[900px] mx-auto mt-[100px] border border-black-600 p-4">
+      <form action="" className="text-center">
+        <input type="text" className="mr-[10px] border border-amber-950 outline-0 p-[5px]" placeholder="Enter your todo...." />
+        <button className="bg-blue-500 text-white p-[5px] cursor-pointer">Add todo</button>
+      </form>
+
+      <div className="w-[300px] mx-auto mt-[10px]">
+        <ul>
+          {data.map((item) =>
+            <>
+              <li className={
+                `mb-[5px] 
+                  flex justify-between px-[5px]
+                  ${item.status === "doing" ? "bg-blue-500 text-white" : ""} 
+                  ${item.status === "completed" ? "bg-green-500 text-white" : ""}
+                  ${item.status === "deleted" ? "bg-red-500 text-white" : ""}
+                `}
+              >
+                {item.title}
+                <span className="">
+                  <button>Xoa</button>
+                </span>
+              </li>
+            </>
+          )}
+        </ul>
+      </div>
+    </div>
+  )
+}
