@@ -47,6 +47,14 @@ export const Todo = () => {
       ...tmpData
     ])
   }
+
+  const handleChange = (event, id) => {
+    const status = event.target.value;
+    const tmpArray = [...todoList];
+    const query = tmpArray.find(item => item.id === id);
+    query.status = status;
+    setTodoList(tmpArray);
+  }
   return (
     <div className="w-[900px] mx-auto mt-[100px] border border-black-600 p-4">
       <form action="" className="text-center" onSubmit={handleSubmit}>
@@ -68,6 +76,12 @@ export const Todo = () => {
               >
                 {item.title}
                 <span className="">
+                  <select name="status" defaultValue={item.status} onChange={(event) => handleChange(event, item.id)}>
+                    <option value="init">init</option>
+                    <option value="doing">doing</option>
+                    <option value="completed">completed</option>
+                    <option value="deleted">deleted</option>
+                  </select>
                   <button onClick={() => handleDelete(item.id)}>Xoa</button>
                 </span>
               </li>
