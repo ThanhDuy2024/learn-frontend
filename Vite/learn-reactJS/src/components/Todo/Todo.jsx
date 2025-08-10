@@ -42,6 +42,10 @@ export const Todo = () => {
     }
   }, [search]);
 
+  useEffect(() => {
+    setRawData(todoList);
+  }, [todoList])
+
   const handleSubmit = (event) => {
     event.preventDefault();
     setTodoList([
