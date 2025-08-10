@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useEffect } from "react";
 export const Todo = () => {
   const data = [
     {
@@ -24,6 +25,22 @@ export const Todo = () => {
   ]
 
   const [todoList, setTodoList] = useState(data);
+  const [rawData, setRawData] = useState(todoList);
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    if(search) {
+      const regex = new RegExp(search, "i");
+      const find = rawData.filter(item => regex.test(item.title));
+      if(find.length > 0) {
+        setRawData(find);
+      } else {
+        setRawData(todoList);
+      }
+    } else {
+      setRawData(todoList);
+    }
+  }, [search]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -55,6 +72,13 @@ export const Todo = () => {
     query.status = status;
     setTodoList(tmpArray);
   }
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const keyword = event.target.search.value;
+    setSearch(keyword);
+    event.target.search.value = "";
+  }
   return (
     <div className="w-[900px] mx-auto mt-[100px] border border-black-600 p-4">
       <form action="" className="text-center" onSubmit={handleSubmit}>
@@ -63,10 +87,14 @@ export const Todo = () => {
       </form>
 
       <div className="w-[300px] mx-auto mt-[10px]">
+        <form action="" onSubmit={handleSearch}>
+          <input type="text" className="mr-[10px] border border-amber-950 outline-0 p-[5px]" placeholder="Search your to do" name="search"/>
+          <button className="bg-blue-500 text-white p-[5px] cursor-pointer">Find</button>
+        </form>
         <ul>
-          {todoList.map((item) =>
+          {rawData.map((item) =>
             <>
-              <li className={
+              <li key={item.id} className={
                 `mb-[5px] 
                   flex justify-between px-[5px]
                   ${item.status === "doing" ? "bg-blue-500 text-white" : ""} 
