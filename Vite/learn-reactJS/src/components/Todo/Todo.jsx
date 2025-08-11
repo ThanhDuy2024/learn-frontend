@@ -27,7 +27,9 @@ export const Todo = () => {
   const [todoList, setTodoList] = useState(data);
   const [rawData, setRawData] = useState(todoList);
   const [search, setSearch] = useState("");
-
+  const [totalPage, setTotalPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [dataFinal, setDataFinal] = useState(rawData);
   useEffect(() => {
     if(search) {
       const regex = new RegExp(search, "i");
@@ -41,6 +43,19 @@ export const Todo = () => {
       setRawData(todoList);
     }
   }, [search]);
+
+  useEffect(() => {
+    const limit = 2;
+    const pages = Math.ceil(rawData.length / limit);
+    if(currentPage > pages || pages.length == 0) {
+      setTotalPage(1);
+    } else {
+      setTotalPage(pages);
+    }
+    
+    const pagination = rawData.slice(((currentPage - 1) * limit),  (currentPage - 1) * limit + limit);
+    setDataFinal(pagination);
+  }, [currentPage, rawData]);
 
   useEffect(() => {
     setRawData(todoList);
@@ -83,6 +98,10 @@ export const Todo = () => {
     setSearch(keyword);
     event.target.search.value = "";
   }
+
+  const handlePage = (page) => {
+    setCurrentPage(page);
+  }
   return (
     <div className="w-[900px] mx-auto mt-[100px] border border-black-600 p-4">
       <form action="" className="text-center" onSubmit={handleSubmit}>
@@ -96,7 +115,7 @@ export const Todo = () => {
           <button className="bg-blue-500 text-white p-[5px] cursor-pointer">Find</button>
         </form>
         <ul>
-          {rawData.map((item) =>
+          {dataFinal.map((item) =>
             <>
               <li key={item.id} className={
                 `mb-[5px] 
@@ -120,6 +139,11 @@ export const Todo = () => {
             </>
           )}
         </ul>
+      </div>
+      <div className="w-[300px] mx-auto mt-[10px]">
+        {Array(totalPage).fill("").map((item, index) =>
+          <button className={`border border-black w-[20px] mr-[5px] cursor-pointer ${currentPage == index + 1 ? "bg-blue-500 text-white" : ""}`} name="pagination" onClick={() => handlePage(index+1)}>{index+1}</button>
+        )}
       </div>
     </div>
   )
