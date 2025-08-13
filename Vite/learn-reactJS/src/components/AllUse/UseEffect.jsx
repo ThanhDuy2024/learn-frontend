@@ -1,5 +1,6 @@
 import { useEffect, useState, createContext } from "react"
 import { UseContext } from "./UseContext";
+import { UseReducer } from "./UseReducer";
 
 export const store = createContext();
 
@@ -61,6 +62,7 @@ export const UseEffect = () => {
       </div>
       <store.Provider value={products}>
         <UseContext/>
+        <UseReducer/>
       </store.Provider>
     </>
   )
