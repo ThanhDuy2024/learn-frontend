@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react"
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import { useEffect, useState, createContext } from "react"
+import { UseContext } from "./UseContext";
+
+export const store = createContext();
+
 export const UseEffect = () => {
   const [listData, setListData] = useState([]);
   const [category, setCategory] = useState("beauty");
@@ -57,23 +59,9 @@ export const UseEffect = () => {
           </button>
         )}
       </div>
-      {products.length > 0 ?
-        (
-          <ul className="ml-[50px]">
-            {products.map((item, index) =>
-              <li key={index}>{item.title}</li>
-            )}
-          </ul>
-        )
-        :
-        (
-          <ul className="ml-[50px]">
-            {Array(10).fill("1").map((item, index) => (
-              <Skeleton key={index}/>
-            ))}
-          </ul>
-        )
-      }
+      <store.Provider value={products}>
+        <UseContext/>
+      </store.Provider>
     </>
   )
 }
