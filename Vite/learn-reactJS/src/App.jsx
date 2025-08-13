@@ -3,6 +3,7 @@ import { OnChange } from './components/domEvent/OnChange';
 import { Onclick } from './components/domEvent/Onclick';
 import { OnSubmit } from './components/domEvent/OnSubmit';
 import { Todo } from './components/Todo/Todo';
+import { UseEffect } from './components/UseEffect/UseEffect';
 // import { Home } from './pages/home';
 function App() {
 
@@ -12,7 +13,8 @@ function App() {
       {/* <Onclick/> */}
       {/* <OnChange/> */}
       {/* <OnSubmit/> */}
-      <Todo/>
+      {/* <Todo/> */}
+      <UseEffect/>
     </>
   )
 }
