@@ -4,17 +4,36 @@ import { Onclick } from './components/domEvent/Onclick';
 import { OnSubmit } from './components/domEvent/OnSubmit';
 import { Todo } from './components/Todo/Todo';
 import { UseEffect } from './components/AllUse/UseEffect';
+import { Home } from './pages/home';
+import { BrowserRouter, Route, Routes } from "react-router"
+import { About } from './pages/about';
+import { Contact } from './pages/contact';
+import { Layout } from "./layout";
+import { AboutUs } from './pages/aboutUs';
+import { AboutHistory } from './pages/aboutHistory';
 // import { Home } from './pages/home';
 function App() {
 
   return (
     <>
-      {/* <Home/> */}
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="about" element={<About />}>
+              <Route index element={<AboutUs/>}/>
+              <Route path="us" element={<AboutUs />} />
+              <Route path='history' element={<AboutHistory/>}/>
+            </Route>
+            <Route path="contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
       {/* <Onclick/> */}
       {/* <OnChange/> */}
       {/* <OnSubmit/> */}
       {/* <Todo/> */}
-      <UseEffect/>
+      {/* <UseEffect/> */}
     </>
   )
 }

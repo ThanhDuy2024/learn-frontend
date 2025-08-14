@@ -2,9 +2,11 @@ import { useEffect, useState, createContext } from "react"
 import { UseContext } from "./UseContext";
 import { UseReducer } from "./UseReducer";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const store = createContext();
 
 export const UseEffect = () => {
+  // eslint-disable-next-line no-unused-vars
   const [listData, setListData] = useState([]);
   const [category, setCategory] = useState("beauty");
   const [products, setproducts] = useState([]);
@@ -29,6 +31,7 @@ export const UseEffect = () => {
           setproducts(data.products);
         })
     }, 1000);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [category]);
 
   const categoryData = [
