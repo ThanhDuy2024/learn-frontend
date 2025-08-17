@@ -43,6 +43,12 @@ export const Header = () => {
             </ul>
           </NavLink>
 
+          <NavLink to={"/product"} className={({ isActive }) =>
+          isActive
+            ? "text-blue-500 font-bold underline" // Khi active
+            : "text-gray-700 hover:text-blue-500" // Khi không active
+        }>Product</NavLink>
+
           <NavLink to={"/contact"} className={({ isActive }) =>
           isActive
             ? "text-blue-500 font-bold underline" // Khi active

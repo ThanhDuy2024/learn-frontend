@@ -11,6 +11,9 @@ import { Contact } from './pages/contact';
 import { Layout } from "./layout";
 import { AboutUs } from './pages/aboutUs';
 import { AboutHistory } from './pages/aboutHistory';
+import { Product } from './pages/products';
+import { ProductDetail } from './pages/productDetail';
+import { ProductList } from './pages/productList';
 // import { Home } from './pages/home';
 function App() {
 
@@ -26,6 +29,10 @@ function App() {
               <Route path='history' element={<AboutHistory/>}/>
             </Route>
             <Route path="contact" element={<Contact />} />
+            <Route path='product' element={<Product/>}>
+              <Route index element={<ProductList/>}/>
+              <Route path=':id' element={<ProductDetail/>}/>
+            </Route>
           </Route>
         </Routes>
       </BrowserRouter>
