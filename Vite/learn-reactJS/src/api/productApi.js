@@ -1,5 +1,5 @@
-export const fetchProduct = async () => {
-  const res = await fetch('https://dummyjson.com/products')
+export const fetchProduct = async (limit, skip) => {
+  const res = await fetch(`https://dummyjson.com/products?limit=${limit}&skip=${skip}`)
   return res.json();
 }
 
