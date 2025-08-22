@@ -1,20 +1,21 @@
-import { useState } from "react"
 import { Link } from "react-router"
+import { useAuth } from "../../../context/authContext";
+import { Toaster } from "sonner";
 
 export const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { handleLogin } = useAuth();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setEmail(event.target.email.value);
-    setPassword(event.target.password.value);
+    const dataLogin = {
+      email: event.target.email.value,
+      password: event.target.password.value
+    }
+    handleLogin(dataLogin);
   }
-
-  console.log(email);
-  console.log(password);
   return (
     <>
+      <Toaster richColors position="top-right" />
       <div className="w-[700px] mx-auto text-center p-[20px] shadow-md rounded-[10px] mt-[150px]">
         <h1 className="text-[#1e293b] text-[1.875rem] font-[600] mb-[8px]">Welcome Back</h1>
         <div className="text-[#64748b] text-[15px] mb-[36px]">Please sign in to your corporate account</div>

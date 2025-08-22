@@ -1,4 +1,5 @@
 import './App.css'
+import { AuthProvider } from './context/authContext';
 import { Layout } from './Layout';
 import { Login } from './pages/admin/auth/LoginForm'
 import { BrowserRouter, Routes, Route } from "react-router";
@@ -8,7 +9,11 @@ function App() {
       <Routes>
         <Route element={<Layout/>}>
           <Route path='admin'>
-            <Route path='login' element={<Login />} />
+            <Route path='login' element={
+              <AuthProvider>
+                <Login />
+              </AuthProvider>
+            } />
           </Route>
         </Route>
       </Routes>
