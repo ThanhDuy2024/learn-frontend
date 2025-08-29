@@ -4,7 +4,8 @@ export const loginApi = async ({email, password}) => {
     headers: {
       "Content-Type": "Application/json"
     },
-    body: JSON.stringify({email, password})
+    body: JSON.stringify({email, password}),
+    credentials: "include"
   })
   
   if(!res.ok) {
@@ -13,4 +14,23 @@ export const loginApi = async ({email, password}) => {
 
   const data = res.json();
   return data
+}
+
+export const profileApi = async (accessToken) => {
+  const res = await fetch('http://localhost:4000/api/admin/account/profile', {
+    method: "GET",
+    headers: {
+      "Content-Type": "Application/json",
+      "Authorization": `${accessToken}`
+    },
+    credentials: "include"
+  })
+
+  if(!res.ok) {
+    const data = res.json();
+    return data;
+  }
+
+  const data = res.json();
+  return data;
 }

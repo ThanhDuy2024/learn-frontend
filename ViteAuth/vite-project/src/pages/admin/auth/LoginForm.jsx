@@ -21,10 +21,10 @@ export const Login = () => {
         <div className="text-[#64748b] text-[15px] mb-[36px]">Please sign in to your corporate account</div>
         <form action="" onSubmit={handleSubmit}>
           <div className="">
-            <input type="email" placeholder="Enter your email" className="w-[75%] border-2 border-[#e2e8f0]  outline-0  p-[10px] rounded-[8px] mb-[15px]" name="email"/>
+            <input type="email" placeholder="Enter your email" className="w-[75%] border-2 border-[#e2e8f0]  outline-0  p-[10px] rounded-[8px] mb-[15px]" name="email" required/>
           </div>
           <div className="">
-            <input type="password" placeholder="Enter your password" className="w-[75%] border-2 border-[#e2e8f0] outline-0 p-[10px] rounded-[8px] mb-[20px]" name="password"/>
+            <input type="password" placeholder="Enter your password" className="w-[75%] border-2 border-[#e2e8f0] outline-0 p-[10px] rounded-[8px] mb-[20px]" name="password" required/>
           </div>
 
           <button className="w-[75%] bg-blue-500 p-[10px] rounded-[10px] text-[18px] text-white cursor-pointer">Login</button>

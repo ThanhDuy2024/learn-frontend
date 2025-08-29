@@ -5,18 +5,23 @@ import { toast } from "sonner"
 import { useNavigate } from "react-router";
 
 const AuthContext = createContext();
-export const AuthProvider = ({children}) => {
+export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
+  const handleLogin = ({ email, password }) => {
+    login.mutate({ email, password });
+  }
+
   const login = useMutation({
     mutationFn: loginApi,
     onSuccess: (data) => {
-      if(data === false) {
-        console.log("Login error");
+      if (data === false) {
+        toast.error("Your email or password incorrect");
       } else {
+        localStorage.setItem("accessToken", data.accessToken);
         toast.success(data.message)
         setTimeout(() => {
-          navigate('/home');
-        }, 1000)
+          navigate("/admin/dashboard");
+        }, 1000) 
       }
     },
     onError: () => {
@@ -24,11 +29,9 @@ export const AuthProvider = ({children}) => {
     }
   })
 
-  const handleLogin = ({email, password}) => {
-    login.mutate({email, password});
-  }
+
   return (
-    <AuthContext.Provider value={{handleLogin}}>
+    <AuthContext.Provider value={{ handleLogin }}>
       {children}
     </AuthContext.Provider>
   )

@@ -3,6 +3,8 @@ import { AuthProvider } from './context/authContext';
 import { Layout } from './Layout';
 import { Login } from './pages/admin/auth/LoginForm'
 import { BrowserRouter, Routes, Route } from "react-router";
+import { Dashborad } from './pages/admin/dashboard/dashboard';
+import { ProtectedAdmin } from './pages/admin/protected/protectedAdmin';
 function App() {
   return (
     <BrowserRouter>
@@ -16,6 +18,14 @@ function App() {
             } />
           </Route>
         </Route>
+
+        <Route path='admin/dashboard' element={
+          <AuthProvider>
+            <ProtectedAdmin>
+              <Dashborad/>
+            </ProtectedAdmin>
+          </AuthProvider>
+        }/>
       </Routes>
     </BrowserRouter>
   )
