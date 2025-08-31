@@ -5,11 +5,12 @@ import { Login } from './pages/admin/auth/LoginForm'
 import { BrowserRouter, Routes, Route } from "react-router";
 import { Dashborad } from './pages/admin/dashboard/dashboard';
 import { ProtectedAdmin } from './pages/admin/protected/protectedAdmin';
+import { Sidebar } from './components/sider';
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route element={<Layout/>}>
+        <Route element={<Layout />}>
           <Route path='admin'>
             <Route path='login' element={
               <AuthProvider>
@@ -18,14 +19,15 @@ function App() {
             } />
           </Route>
         </Route>
-
-        <Route path='admin/dashboard' element={
-          <AuthProvider>
-            <ProtectedAdmin>
-              <Dashborad/>
-            </ProtectedAdmin>
-          </AuthProvider>
-        }/>
+        <Route element={<Sidebar/>}>
+          <Route path='admin/dashboard' index element={
+            <AuthProvider>
+              <ProtectedAdmin>
+                <Dashborad />
+              </ProtectedAdmin>
+            </AuthProvider>
+          } />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
