@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import { Dashborad } from './pages/admin/dashboard/dashboard';
 import { ProtectedAdmin } from './pages/admin/protected/protectedAdmin';
 import { Sidebar } from './components/sider';
+import { Category } from './pages/admin/category/Category';
+import { CategoryCreate } from './pages/admin/category/CategoryCreate';
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +26,20 @@ function App() {
             <AuthProvider>
               <ProtectedAdmin>
                 <Dashborad />
+              </ProtectedAdmin>
+            </AuthProvider>
+          } />
+          <Route path='admin/category' index element={
+            <AuthProvider>
+              <ProtectedAdmin>
+                <Category />
+              </ProtectedAdmin>
+            </AuthProvider>
+          } />
+          <Route path='admin/category/create' index element={
+            <AuthProvider>
+              <ProtectedAdmin>
+                <CategoryCreate />
               </ProtectedAdmin>
             </AuthProvider>
           } />
